@@ -7,7 +7,7 @@ import Stats from '../components/supplier/Stats'
 import constants from '../constants/constants'
 import { capitalizeString } from '../utils/utils'
 
-const StyledSupplier = styled.div`
+const StyledArticle = styled.div`
   {
     -ms-box-orient: horizontal;
     display: -webkit-box;
@@ -38,7 +38,7 @@ const StyledSupplier = styled.div`
   }
 `
 
-class Supplier extends Component {
+class Article extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -69,10 +69,10 @@ class Supplier extends Component {
 
   render () {
     return (
-      <StyledSupplier>
+      <StyledArticle>
         <div className='leftNav'>
           <ul>
-            {constants.tabs.supplier.map((tab, index) => {
+            {constants.tabs.article.map((tab, index) => {
               return <li
                 key={tab}
                 onClick={() => this.handleChange('active', index)}
@@ -83,9 +83,9 @@ class Supplier extends Component {
           </ul>
         </div>
         <div className='main'>{this.handleTab()}</div>
-      </StyledSupplier>
+      </StyledArticle>
     )
   }
 }
 
-export default connect(null)(Supplier)
+export default connect(null)(Article)

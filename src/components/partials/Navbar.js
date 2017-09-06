@@ -17,9 +17,10 @@ const StyledNavbar = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-left: 10%;
-    margin-right: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
     height: 48px;
+    border-bottom: 4px solid grey;
   }
   @media (max-width: 420px) {
     margin-left: 10px;
