@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     <StyledNavbar>
       <div>
-        <Link to='#'>
+        <Link to='/'>
           LOGO
         </Link>
       </div>

@@ -6,6 +6,12 @@ const constants = {
       'stats',
       'profile',
       'settings'
+    ],
+    expert: [
+      'articles',
+      'stats',
+      'profile',
+      'settings'
     ]
   }
 }
