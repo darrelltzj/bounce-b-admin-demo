@@ -20,8 +20,8 @@ class Routes extends Component {
             <Route exact path='/' component={Supplier} />
             <Route exact path='/supplier' component={Supplier} />
             <Route exact path='/expert' component={Expert} />
-            <Route exact path='/products/:id' component={Product} />
-            <Route exact path='/articles/:id' component={Article} />
+            <Route exact path='/products/:id' render={(props) => <Product {...props} />} />
+            <Route exact path='/articles/:id' render={(props) => <Article {...props} />} />
             <Route path='*' component={NotFoundPage} />
           </Switch>
         </main>

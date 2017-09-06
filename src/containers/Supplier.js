@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import Orders from '../components/supplier/Orders'
 import Products from '../components/supplier/Products'
 import Stats from '../components/supplier/Stats'
+import Profile from '../components/supplier/Profile'
+import Settings from '../components/supplier/Settings'
 import constants from '../constants/constants'
 import { capitalizeString } from '../utils/utils'
 
@@ -62,6 +64,10 @@ class Supplier extends Component {
         return <Products />
       case 2:
         return <Stats />
+      case 3:
+        return <Profile />
+      case 4:
+        return <Settings />
       default:
         return <div />
     }

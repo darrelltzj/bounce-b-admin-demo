@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
-import Orders from '../components/supplier/Orders'
-import Products from '../components/supplier/Products'
-import Stats from '../components/supplier/Stats'
-import constants from '../constants/constants'
-import { capitalizeString } from '../utils/utils'
+// import constants from '../constants/constants'
+// import { capitalizeString } from '../utils/utils'
 
 const StyledProduct = styled.div`
   {
@@ -45,7 +42,6 @@ class Product extends Component {
       active: 0
     }
     this.handleChange = this.handleChange.bind(this)
-    this.handleTab = this.handleTab.bind(this)
   }
 
   handleChange (category, value) {
@@ -54,35 +50,12 @@ class Product extends Component {
     this.setState(obj)
   }
 
-  handleTab () {
-    switch (this.state.active) {
-      case 0:
-        return <Orders />
-      case 1:
-        return <Products />
-      case 2:
-        return <Stats />
-      default:
-        return <div />
-    }
-  }
-
   render () {
     return (
       <StyledProduct>
-        <div className='leftNav'>
-          <ul>
-            {constants.tabs.product.map((tab, index) => {
-              return <li
-                key={tab}
-                onClick={() => this.handleChange('active', index)}
-                style={this.state.active === index ? {backgroundColor: 'black', color: 'white'} : null}>
-                {capitalizeString(tab)}
-              </li>
-            })}
-          </ul>
+        <div>
+          <h1>Product&nbsp;{this.props.match.params.id}</h1>
         </div>
-        <div className='main'>{this.handleTab()}</div>
       </StyledProduct>
     )
   }
