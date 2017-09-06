@@ -15,6 +15,7 @@ class Routes extends Component {
         <main>
           <Navbar />
           <Switch>
+            <Route exact path='/' component={Supplier} />
             <Route exact path='/supplier' component={Supplier} />
             <Route exact path='/expert' component={Expert} />
             <Route path='*' component={NotFoundPage} />
