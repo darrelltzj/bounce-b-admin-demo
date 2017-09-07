@@ -85,7 +85,7 @@ const StyledStats = styled.div`
     ${''}
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
     height: 100%;
   }
@@ -94,6 +94,7 @@ const StyledStats = styled.div`
     border: 1px solid black;
   }
   td {
+    width: 50%;
     padding: 8px;
     text-align: center;
   }

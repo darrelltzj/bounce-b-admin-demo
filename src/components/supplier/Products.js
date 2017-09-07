@@ -25,17 +25,23 @@ class Products extends Component {
     return (
       <StyledProducts>
         <h1>Products</h1>
+        <div className='buttonDiv'>
+          <button>Add Product</button>
+        </div>
         <ul>
           {this.random().map(product => {
             return (
               <li key={product._id}>
-                <Link to={`/products/${product._id}`}>
-                  <div className='productContainer'>
+                <div className='productContainer'>
+                  <div className='buttonDiv'>
+                    <button>Edit</button>
+                  </div>
+                  <Link to={`/products/${product._id}`}>
                     <div className='hero' />
                     <div>{product.name} - ${product.price}</div>
-                    <div>#{product.tag}</div>
-                  </div>
-                </Link>
+                    <div>#<i>{product.tag}</i></div>
+                  </Link>
+                </div>
               </li>
             )
           })}
@@ -81,8 +87,13 @@ const StyledProducts = styled.div`
   }
   .hero {
     width: 100%;
-    height: 70%;
+    height: 60%;
     background-color: lightGreen;
+  }
+  .buttonDiv {
+    display:flex;
+    flex-flow:row;
+    justify-content: flex-end;
   }
 `
 

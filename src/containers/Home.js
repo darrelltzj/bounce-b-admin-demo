@@ -74,7 +74,8 @@ const style = {
     display: 'flex',
     flexFlow: 'row',
     width: '50%',
-    border: '1px solid black'
+    border: '1px solid black',
+    cursor: 'pointer'
   },
   chosenUser: {
     backgroundColor: 'black',

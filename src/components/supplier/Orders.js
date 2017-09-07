@@ -47,11 +47,11 @@ class Orders extends Component {
                   </td>
                   <td>{order.quantity}</td>
                   <td>
-                    <Link to={`https://bouncebuserdemo.herokuapp.com/profile/${order.customer}`}>
+                    <a href={`https://bouncebuserdemo.herokuapp.com/profile/${order.customer}`} target='_blank' rel='noopener noreferrer'>
                       Customer&nbsp;{order.customer}
-                    </Link>
+                    </a>
                   </td>
-                  <td>{order.fulfilled ? <button>Fulfill</button> : 'Sent to customer'}</td>
+                  <td>{order.fulfilled ? <button style={{ cursor: 'pointer' }}>Fulfill</button> : 'Sent to customer'}</td>
                 </tr>
               )
             })}
@@ -77,6 +77,7 @@ const StyledOrders = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
+    padding: 0 10%;
   }
   table {
     width: 100%;
