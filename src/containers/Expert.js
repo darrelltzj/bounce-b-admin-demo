@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import Articles from '../components/expert/Articles'
-import Stats from '../components/expert/Stats'
+import Videos from '../components/expert/Videos'
 import Profile from '../components/expert/Profile'
 import Settings from '../components/supplier/Settings'
 import constants from '../constants/constants'
@@ -60,7 +60,7 @@ class Expert extends Component {
       case 0:
         return <Articles />
       case 1:
-        return <Stats />
+        return <Videos />
       case 2:
         return <Profile />
       case 3:

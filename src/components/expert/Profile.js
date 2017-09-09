@@ -39,9 +39,9 @@ class Profile extends Component {
                     value={this.state.name}
                     onChange={(e) => { this.handleChange('name', e.target.value) }}
                     style={{width: '50%'}}
-          />
-        ) : <h3>{this.state.name}</h3>
-          }
+                  />
+                ) : <h3>{this.state.name}</h3>
+              }
               </td>
             </tr>
 
@@ -56,9 +56,9 @@ class Profile extends Component {
                     value={this.state.bio}
                     onChange={(e) => { this.handleChange('bio', e.target.value) }}
                     style={{width: '480px', height: '48px'}}
-          />
-          ) : <p>{this.state.bio}</p>
-          }
+                  />
+                ) : <p>{this.state.bio}</p>
+              }
               </td>
             </tr>
 

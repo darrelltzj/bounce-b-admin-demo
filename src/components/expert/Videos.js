@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-class Stats extends Component {
+class Video extends Component {
   constructor (props) {
     super(props)
     this.state = {}
@@ -20,14 +20,14 @@ class Stats extends Component {
   }
   render () {
     return (
-      <StyledStats>
-        <h1>Stats</h1>
+      <StyledVideo>
+        <h1>Video</h1>
 
         <table>
           <thead>
             <tr>
-              <th>Product</th>
-              <th>Sold</th>
+              <th>Video</th>
+              <th>Viewers</th>
             </tr>
           </thead>
           <tbody>
@@ -35,8 +35,8 @@ class Stats extends Component {
               return (
                 <tr key={stats._id}>
                   <td>
-                    <Link to={`/products/${stats._id}`}>
-                      Product&nbsp;{stats._id}
+                    <Link to={`/videos/${stats._id}`}>
+                      Video&nbsp;{stats._id}
                     </Link>
                   </td>
                   <td>{stats.sold}</td>
@@ -45,35 +45,12 @@ class Stats extends Component {
             })}
           </tbody>
         </table>
-
-        <table>
-          <thead>
-            <tr>
-              <th>Article</th>
-              <th>Readers</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.random().map(stats => {
-              return (
-                <tr key={stats._id}>
-                  <td>
-                    <Link to={`/articles/${stats._id}`}>
-                      Article&nbsp;{stats._id}
-                    </Link>
-                  </td>
-                  <td>{stats.sold}</td>
-                </tr>
-              )
-            })}
-          </tbody>
-        </table>
-      </StyledStats>
+      </StyledVideo>
     )
   }
 }
 
-const StyledStats = styled.div`
+const StyledVideo = styled.div`
   {
     -ms-box-orient: horizontal;
     display: -webkit-box;
@@ -102,4 +79,4 @@ const StyledStats = styled.div`
   }
 `
 
-export default Stats
+export default Video

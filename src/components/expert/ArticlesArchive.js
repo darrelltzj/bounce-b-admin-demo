@@ -10,47 +10,59 @@ class Articles extends Component {
   }
   random () {
     let arr = []
-    for (var i = 1; i < 10; i++) {
+    for (var i = 1; i < 100; i++) {
       arr.push({
         _id: i,
-        sold: Math.floor(Math.random() * 100)
+        product: i,
+        quantity: Math.floor(Math.random() * 100),
+        customer: Math.floor(Math.random() * 4),
+        fulfilled: i % 3 === 0
       })
     }
     return arr
   }
   render () {
     return (
-      <StyledAtricles>
+      <StyledArticles>
         <h1>Articles</h1>
-
         <table>
           <thead>
             <tr>
-              <th>Article</th>
-              <th>Readers</th>
+              <th>No.</th>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Customer</th>
+              <th>Fulfilled</th>
             </tr>
           </thead>
           <tbody>
-            {this.random().map(stats => {
+            {this.random().map(article => {
               return (
-                <tr key={stats._id}>
+                <tr key={article._id}>
+                  <td>{article._id}</td>
                   <td>
-                    <Link to={`/articles/${stats._id}`}>
-                      Article&nbsp;{stats._id}
+                    <Link to={`/products/${article.product}`}>
+                      Product&nbsp;{article.product}
                     </Link>
                   </td>
-                  <td>{stats.sold}</td>
+                  <td>{article.quantity}</td>
+                  <td>
+                    <a href={`https://bouncebuserdemo.herokuapp.com/profiles/${article.customer}`}>
+                      Customer&nbsp;{article.customer}
+                    </a>
+                  </td>
+                  <td>{article.fulfilled ? <button>Fulfill</button> : 'Sent to customer'}</td>
                 </tr>
               )
             })}
           </tbody>
         </table>
-      </StyledAtricles>
+      </StyledArticles>
     )
   }
 }
 
-const StyledAtricles = styled.div`
+const StyledArticles = styled.div`
   {
     -ms-box-orient: horizontal;
     display: -webkit-box;
@@ -62,13 +74,14 @@ const StyledAtricles = styled.div`
     ${''}
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
     height: 100%;
   }
   table {
-    width: 50%;
-    border: 1px solid black;
+    width: 100%;
+    ${''}
+    barticle: 1px solid black;
   }
   td {
     padding: 8px;

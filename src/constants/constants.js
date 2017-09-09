@@ -9,7 +9,7 @@ const constants = {
     ],
     expert: [
       'articles',
-      'stats',
+      'videos',
       'profile',
       'settings'
     ]

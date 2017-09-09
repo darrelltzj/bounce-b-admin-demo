@@ -10,6 +10,7 @@ import Expert from './containers/Expert'
 import Admin from './containers/Admin'
 import Product from './containers/Product'
 import Article from './containers/Article'
+import Video from './containers/Video'
 import NotFoundPage from './containers/NotFoundPage'
 
 class Routes extends Component {
@@ -25,6 +26,7 @@ class Routes extends Component {
             <Route exact path='/admin' component={Admin} />
             <Route exact path='/products/:id' render={(props) => <Product {...props} />} />
             <Route exact path='/articles/:id' render={(props) => <Article {...props} />} />
+            <Route exact path='/videos/:id' render={(props) => <Video {...props} />} />
             <Route path='*' component={NotFoundPage} />
           </Switch>
         </main>
